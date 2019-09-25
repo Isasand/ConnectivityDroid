@@ -1,97 +1,52 @@
-# Connectivity Droid
+### User Guide Connectivity Droid
 
-Android app for communicating with the NB/LTE Connectivity checker.
+## Start up and connecting to device
+To discover devices, click on "SCAN DEVICES". Discovery can take up to 15-20 seconds.
+The default name of the bluetooth module is HC-06.
 
-## Startup 
+![screenshot](https://raw.github.com/Isasand/ConnectivityDroid/cdroid/images/startscreen.jpg)
+![screenshot](https://raw.github.com/Isasand/ConnectivityDroid/cdroid/images/connect.jpg)
 
-User must grant the application access to location and bluetooth. 
-This will be asked on startup. 
+## Scan signal and quality
+After connecting to device a request for signal power and quality can be done by pressing the “SCAN” button.
 
-## Connecting to device 
+Device will send IMSI and current protocol status after connecting which will be displayed at the scan page.
 
-User may be asked to enter a pass code first time connecting to device. This is "0000" or "1234" by default. 
+Longitude and latitude are also available and will be updated once per minute in the Android application. This will not be used where the phone dont have a valid GPS signal.
 
-### Communication between device application and Condroid
+To refresh what cell the device connects to push the REFRESH button. The device may say “searching..” a few seconds after a successful refresh since it is trying to get a new signal.
 
-IMSI:     
-Will be recieved once after connection like this:     
-IMSI:<imsi>#
+*OBS: Change protocol is not supported in this version.
+Sending data to Azure is not supported in this version, see test page to send data to a test server.*
 
-```
-IMSI:123458690#
-```
+## Test basic functionality on nw
+A test page for some basic testing on the network.
 
-PROTOCOL: 
-Will be recieved once after connection like this: 
-PROTOCOL:<protocol>#
+##### Send data to echo server
 
-Protocol will be recieved as a bool. 
-0 > Narrowband IoT.
-1 > LTE Cat M1.
+Input data and press “SEND TO ECHO SERVER” to test sending data through the network. 200 character limit. (ÅÄÖ not supported).
 
-```
-PROTOCOL:0#
-```
+You will get the echoed answer on the screen.
 
-POWER AND QUALITY:      
-Will be recieved when Android sends '1'.     
-PQ:<power>:<quality>#
+##### Send data to any server
 
-```
-PQ:23:45#
-```
+Input IP, port and data to send to your own test server.
 
-CHANGE PROTOCOL:      
-Will be done when Android sends '2.      
-Answer will be recieved in following format:
+*Not supported in this version.*
 
-ALERT:<message>#
+##### Request network attach
 
-```
-ALERT:Changed protocol to NB-IoT#
-```
+Requests a simple attach to the network.
 
-REFRESH REQUEST:     
-Will be requested when Android sends '3'.     
-Answer will be recieved in following format:
+#### Request network detach
 
-ALERT:<message>#
+Requests a simple detach to the network.
 
-```
-ALERT:Refresh successful#
-```
+## Save measurements
+You can save a measurement point by pressing the SAVE button.
 
-ATTACH REQUEST:      
-Will be requested when Android sends '4'.      
-Answer will be recieved in following format:
-
-ALERT:<message>#
-
-```
-ALERT:Attach successful#
-```
-
-DETACH REQUEST:      
- Will be requested when Android sends '5'.      
-Answer will be recieved in following format: 
-
-ALERT:<message>#
-
-```
-ALERT:Detach successful#
-```
-
-SEND DATA REQUEST: 
-Will be requested when Android sends '6' followed by the data to send.
-
-Example: 
-```
-6DataToSend
-```
-
-Answer will be recieved like this
-
-```
-ECHO:EchoedData#
-```
-
+*Not yet supported.
+In this version it is only supported to see timestamp and used network in a list under the history page and only during the active session.
+Although the measurement point is saved with position and signal information it is not yet displayed for the user.
+Functionality to manage saved data over sessions (send to cloud (Azure)/ delete etc.) will be implemented.
+In case of issues using the solution in this stage, restart the device and the application.*
