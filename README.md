@@ -4,11 +4,11 @@
 To discover devices, click on "SCAN DEVICES". Discovery can take up to 15-20 seconds.
 The default name of the bluetooth module is HC-06.
 
-<img src="cdroid/images/startscreen.jpg" height="400" />
+<img src="cdroid/images/startscreen.png" height="400" />
 
 ## Scan signal and quality
 After connecting to device a request for signal power and quality can be done by pressing the “SCAN” button.
-<img src="cdroid/images/signalpage.jpg" height="400" />
+<img src="cdroid/images/signalpage.png" height="400" />
 
 Device will send IMSI and current protocol status after connecting which will be displayed at the scan page.
 
@@ -22,7 +22,7 @@ Sending data to Azure is not supported in this version, see test page to send da
 ## Test basic functionality on nw
 A test page for some basic testing on the network.
 
-<img src="cdroid/images/nwtests.jpg" height="400" />
+<img src="cdroid/images/nwtests.png" height="400" />
 
 ##### Send data to echo server
 
