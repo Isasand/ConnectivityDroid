@@ -4,8 +4,8 @@
 To discover devices, click on "SCAN DEVICES". Discovery can take up to 15-20 seconds.
 The default name of the bluetooth module is HC-06.
 
-![screenshot](https://raw.github.com/Isasand/ConnectivityDroid/cdroid/images/startscreen.jpg)
-![screenshot](https://raw.github.com/Isasand/ConnectivityDroid/cdroid/images/connect.jpg)
+![screenshot](cdroid/images/startscreen.jpg)
+![screenshot](cdroid/images/connect.jpg)
 
 ## Scan signal and quality
 After connecting to device a request for signal power and quality can be done by pressing the “SCAN” button.
