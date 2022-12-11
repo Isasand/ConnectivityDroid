@@ -14,7 +14,7 @@
         "azure-iot-device-mqtt": "^1.9.1",
         "chart.js": "^2.7.3",
         "cordova-android": "^7.1.4",
-        "cordova-browser": "^5.0.4",
+        "cordova-browser": "^6.0.0",
         "cordova-ios": "^4.5.5",
         "cordova-plugin-appcenter-analytics": "^0.3.0",
         "cordova-plugin-appcenter-crashes": "^0.3.0",
